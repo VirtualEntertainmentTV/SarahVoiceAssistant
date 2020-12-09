@@ -4,6 +4,7 @@ import pywhatkit
 import datetime
 import wikipedia
 import pyjokes
+import webbrowser
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -28,7 +29,6 @@ def take_command():
     except:
         pass
     return command
-
 
 def run_sarah():
     command = take_command()
@@ -60,10 +60,27 @@ def run_sarah():
         talk('sorry, I have a headache')
     elif 'are you single' in command:
         talk('I am in a relationship with wifi')
+    elif 'good morning' in command:
+        talk('great morning, how are you?')
+    elif 'how are you' in command:
+        talk('I am as well as an AI can be')
+    elif 'thank you' in command:
+        talk('it is my pleasure')
+    elif 'alexa' in command:
+        talk('really? I am much better than alexa. are you trying to irritate me?')
+    elif 'no' in command:
+        talk('excellent! I did not think so')
+    elif 'goodbye' in command:
+        talk('goodbye for now')
     elif 'joke' in command:
         talk(pyjokes.get_joke())
+    elif 'what are you' in command:
+        talk('I am sarah, your Artificial Intelligent assistant')
+    elif 'question' in command:
+        talk('how can I help you')
     else:
         talk('Please say the command again.')
+
 
 while True:
     run_sarah()
